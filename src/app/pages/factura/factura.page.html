@@ -1,0 +1,39 @@
+
+<ion-content>
+  <div class="datos-container">
+    <h2>Información del Usuario</h2>
+    
+    <div class="datos-item">
+      <strong>Nombre:</strong> <span>{{ datos.nombre }}</span>
+    </div>
+    <div class="datos-item">
+      <strong>Apellido:</strong> <span>{{ datos.apellido }}</span>
+    </div>
+    <div class="datos-item">
+      <strong>País:</strong> <span>{{ datos.pais }}</span>
+    </div>
+    <div class="datos-item">
+      <strong>Dirección:</strong> <span>{{ datos.direccion }}</span>
+    </div>
+    <div class="datos-item">
+      <strong>Correo Electrónico:</strong> <span>{{ datos.email }}</span>
+    </div>
+    <div class="datos-item">
+      <strong>Tarjeta de Crédito:</strong> <span> {{ datos.creditCard }}</span>
+    </div>
+    <div class="datos-item">
+      <strong>CVC:</strong> <span></span>
+    </div>
+    <div class="datos-item">
+      <strong>Fecha de Vencimiento:</strong> <span>{{ datos.fechaDeVencimiento}}</span>
+    </div>
+    <div class="datos-item total">
+      <strong>Total a Pagar:</strong> <span>${{ datos.total | currency }}</span>
+    </div>
+  </div>
+  
+
+  <ion-button (click)="regrearHome()" expand="block" shape="round">
+    regresar
+  </ion-button>
+</ion-content>

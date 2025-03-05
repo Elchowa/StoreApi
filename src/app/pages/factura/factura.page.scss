@@ -1,0 +1,38 @@
+.datos-container {
+    max-width: 400px;
+    background: #1e1e1e;
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    margin: auto;
+    text-align: left;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #4d148c;
+  }
+  
+  .datos-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+    padding: 8px;
+    background: #2a2a2a;
+    border-radius: 6px;
+  }
+  
+  .datos-item strong {
+    color: #b3b3b3;
+  }
+  
+  .total {
+    font-size: 18px;
+    font-weight: bold;
+    background: #4d148c;
+    color: white;
+  }
+  

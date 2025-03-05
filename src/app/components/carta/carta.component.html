@@ -1,0 +1,14 @@
+
+  <ion-card>
+    <img [src]="producto.image" [alt]="producto.title" class="producto-img">
+    <ion-card-content>
+      <h2>{{ producto.title }}</h2>
+      <strong>Precio: ${{ producto.price }}</strong>
+      <div class="stars">
+        <ng-container *ngFor="let star of getStars(producto.rating.rate)">
+          <i [ngClass]="star"></i>
+        </ng-container>
+      </div>
+    </ion-card-content>
+  </ion-card>
+

@@ -1,0 +1,52 @@
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
+
+.stars {
+    background: linear-gradient(45deg, #CDA434, #E6BE55, #FFD700, #E6BE55, #CDA434);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.5rem;
+  }
+
+  .detalle-card {
+    max-width: 400px; 
+    max-height: 1000px;
+    margin: auto; 
+    padding: 16px;
+    border-radius: 12px;
+    background: #1e1e1e; 
+    color: #fff;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); 
+    transition: transform 0.2s ease-in-out; 
+  }
+  
+  .detalle-card:hover {
+    transform: scale(1.03);
+  }
+  
+  .detalle-img {
+    width: 100%;
+    max-height: 320px; 
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .stars {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    margin: 10px 0;
+  }
+  
+  ion-button {
+    background: #007bff;
+    border-radius: 20px;
+    font-weight: bold;
+    color: white;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  ion-button:hover {
+    background: #0056b3;
+  }

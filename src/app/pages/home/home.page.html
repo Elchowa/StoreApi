@@ -1,0 +1,33 @@
+<app-header></app-header>
+<ion-content class="ion-padding">
+  <div class="tools-container">
+
+    <div class="Categoria">
+      <ion-list>
+        <ion-item>
+          <ion-select aria-label="Fruit" interface="modal"
+            placeholder="Categoria"
+            (ionChange)="getProductos($event.detail.value)">
+            <ion-select-option value>Todos</ion-select-option>
+            <ion-select-option value="men's clothing">Prendas
+              Masculinas</ion-select-option>
+            <ion-select-option value="jewelery">Joyería</ion-select-option>
+            <ion-select-option
+              value="electronics">Electrónica</ion-select-option>
+            <ion-select-option value="women's clothing">Prendas
+              Femeninas</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+    </div>
+  </div>
+
+  <div class="productos-grid">
+    <ion-card *ngFor="let producto of productos"
+      (click)="irDetalles(producto.id)">
+      <app-carta [producto]="producto">
+
+      </app-carta>
+    </ion-card>
+  </div>
+</ion-content>

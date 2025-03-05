@@ -1,0 +1,39 @@
+<app-header [param]=1></app-header>
+
+<ion-content class="ion-padding">
+  <h1 class="titulo">Detalles Del Producto</h1>
+  <div *ngIf="producto">
+    <ion-card class="detalle-card">
+      <img [src]="producto.image" [alt]="producto.title" class="detalle-img">
+      <ion-card-header>
+        <ion-card-title>{{ producto.title }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p><strong>Categoría:</strong> {{ producto.category }}</p>
+        <p><strong>Descripción:</strong> {{ producto.description }}</p>
+        <p><strong>Precio:</strong> ${{ producto.price }}</p>
+        <ion-list>
+          <ion-item>
+            <ion-input aria-label="cantidad" type="number" [(ngModel)]="cantidad" min="1" (ionChange)="validarCantidad()"></ion-input>
+          </ion-item>
+          
+        </ion-list>
+        <div class="stars">
+          <ng-container *ngFor="let star of getStars(producto.rating.rate)">
+            <i [ngClass]="star"></i>
+          </ng-container>
+          <span>({{ producto.rating.count }} valoraciones)</span>
+        </div>
+
+        <ion-button expand="full" color="primary" (click)="onClick()">
+          Comprar Ahora
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <div *ngIf="!producto" class="loading">
+    <ion-spinner name="dots"></ion-spinner>
+    <p>Cargando producto...</p>
+  </div>
+</ion-content>

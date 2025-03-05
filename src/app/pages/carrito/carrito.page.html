@@ -1,0 +1,99 @@
+<app-header [param]=1>
+
+</app-header>
+
+<ion-content class="ion-padding">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-md="6" size-lg="4"
+        *ngFor="let producto of productos">
+        <app-items [producto]="producto"></app-items>
+      </ion-col>
+    </ion-row>
+    <ion-list>
+      <ion-item>
+        <ion-label>
+          <h3>Subtotal</h3>
+        </ion-label>
+        <ion-note slot="end">{{ subtotal | currency }}</ion-note>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>
+          <h3>Total (impuestos incluidos)</h3>
+        </ion-label>
+        <ion-note slot="end">{{ total | currency }}</ion-note>
+      </ion-item>
+    </ion-list>
+    <ion-button id="open-modal" expand="block">Finalizar compra</ion-button>
+  </ion-grid>
+
+  <ion-modal #modal trigger="open-modal"
+    [presentingElement]="presentingElement">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Modal</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="modal.dismiss()">Close</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-list>
+
+          <ion-item>
+            <h1>Datos personales</h1>
+          </ion-item>
+
+          <form (ngSubmit)="onSubmit()">
+            <ion-item>
+              <ion-label position="floating">Nombre</ion-label>
+              <ion-input type="text" [(ngModel)]="nombre" name="nombre" required></ion-input>
+            </ion-item>
+          
+            <ion-item>
+              <ion-label position="floating">Apellido</ion-label>
+              <ion-input type="text" [(ngModel)]="apellido" name="apellido" required></ion-input>
+            </ion-item>
+          
+            <ion-item>
+              <ion-label position="floating">País</ion-label>
+              <ion-input type="text" [(ngModel)]="pais" name="pais" required></ion-input>
+            </ion-item>
+          
+            <ion-item>
+              <ion-label position="floating">Dirección</ion-label>
+              <ion-input type="text" [(ngModel)]="direccion" name="direccion" required></ion-input>
+            </ion-item>
+          
+            <ion-item>
+              <ion-label position="floating">Tarjeta de crédito</ion-label>
+              <ion-input type="number" [(ngModel)]="creditCard" name="creditCard" required></ion-input>
+            </ion-item>
+          
+            <ion-item>
+              <ion-label position="floating">CVC</ion-label>
+              <ion-input type="number" [(ngModel)]="cvc" name="cvc" required></ion-input>
+            </ion-item>
+          
+            <ion-item>
+              <ion-label>Fecha de vencimiento</ion-label>
+              <ion-datetime display-format="YYYY-MM-DD" [(ngModel)]="fechaDeVencimiento" name="fechaDeVencimiento"></ion-datetime>
+            </ion-item>
+          
+            <ion-item>
+              <ion-label position="floating">Email</ion-label>
+              <ion-input type="email" [(ngModel)]="email" name="email" required></ion-input>
+            </ion-item>
+          
+            <ion-button expand="full" type="submit"  (click)="modal.dismiss()">Enviar</ion-button>
+          </form>
+          
+
+        </ion-list>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+
+</ion-content>
